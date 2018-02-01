@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+#CustomersTable {
+    width: 100%;
+}
+
+thead {
+    background-color: aqua;
+}
