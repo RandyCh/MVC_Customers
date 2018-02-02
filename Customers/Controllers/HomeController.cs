@@ -26,5 +26,12 @@ namespace Customers.Controllers
 
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ContactForm()
+        {
+
+            return View();
+        }
     }
 }

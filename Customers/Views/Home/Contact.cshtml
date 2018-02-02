@@ -4,14 +4,15 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@using (Html.BeginForm("ContactForm", "Home", FormMethod.Post))
+{@Html.AntiForgeryToken()
+<fieldset>
+    <legend>請輸入聯絡資訊</legend>
+    @Html.Label("姓名")
+    @Html.TextBox("Name", null, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.Label("電子郵件")
+    @Html.TextBox("Email", null, new { @class = "form-control", @placehold = "aaa@aaa.com", @required = "required", @type = "email" })
+    <br />
+    <button type="submit"><i class="fab fa-apple-pay"></i>submit</button>
+</fieldset>}
